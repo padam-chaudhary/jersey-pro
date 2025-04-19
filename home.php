@@ -373,7 +373,7 @@
                 <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
                 <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
                 <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
-            </div>
+            </div>   
         </div>
         <p class="footer-bottom">&copy; 2025 JERSEY PRO. All Rights Reserved.</p>
     </footer>
