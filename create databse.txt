@@ -1,0 +1,37 @@
+-- create databse
+create database food_delivery_db;
+
+-- tables
+CREATE TABLE menu_items (
+    item_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL,
+    category VARCHAR(255) NOT NULL,
+    image VARCHAR(255)
+);
+
+CREATE TABLE Users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    Username VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    confirm_password varchar(255) not null,
+    role enum('user','admin') DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+   --  id INT NOT NULL,
+--     restaurant_id INT NOT NULL,
+    fullname VARCHAR(255) NOT NULL,
+    mobile VARCHAR(20) NOT NULL,
+    address TEXT NOT NULL,
+    quantity INT NOT NULL,
+    total_price DECIMAL(10,2) NOT NULL,
+    paymentmethod VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   --  FOREIGN KEY (id) REFERENCES Users(id) ON DELETE CASCADE,
+--     FOREIGN KEY (restaurant_id) REFERENCES Restaurants(restaurant_id) ON DELETE CASCADE
+);
