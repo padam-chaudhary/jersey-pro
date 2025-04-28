@@ -14,13 +14,13 @@ define('INCLUDED_FROM_CONFIG', true);
 // Site information
 define('SITE_NAME', 'JerseyPro');
 define('SITE_URL', 'https://yoursite.com'); // Change to your domain
-define('ADMIN_EMAIL', 'admin@yoursite.com');
+define('ADMIN_EMAIL', 'admin@jerseypro.com');
 
 // Database configuration
-$dbHost = 'localhost';
-$dbName = 'jersey_pro_db';
-$dbUser = 'dbusername';
-$dbPass = 'dbpassword';
+$dbHost = 'localhost:3306';
+$dbName = 'jersey_pro';
+$dbUser = 'root';
+$dbPass = '11111111';
 
 // Environment settings
 define('DEVELOPMENT_MODE', true); // Set to false in production
@@ -43,8 +43,8 @@ if (DEVELOPMENT_MODE) {
 }
 
 // Currency settings
-define('CURRENCY_SYMBOL', '$');
-define('CURRENCY_CODE', 'USD');
+define('CURRENCY_SYMBOL', 'Rs');
+define('CURRENCY_CODE', 'NPR'); // Nepalese Rupee
 
 // Pagination settings
 define('ITEMS_PER_PAGE', 12);
@@ -56,4 +56,4 @@ define('ALLOWED_IMAGE_TYPES', ['image/jpeg', 'image/png', 'image/webp']);
 // Path settings
 define('UPLOAD_PATH', $_SERVER['DOCUMENT_ROOT'] . '/uploads/');
 define('JERSEYS_IMG_PATH', 'assets/images/jerseys/');
-define('TEAMS_IMG_PATH', 'assets/images/teams/');
+?>

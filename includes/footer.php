@@ -7,7 +7,7 @@
                 <h4>Contact Us</h4>
                 <p>Email: support@jerseypro.com</p>
                 <p>Phone: 01-5570204</p>
-                <p>Address:Lalitpur metropoliton city-25, Bhainsepati, Lalitpur</p>
+                <p>Address:Lalitpur Metropoliton City-25, Bhainsepati, Lalitpur</p>
             </div>
             <div class="social">
                 <h4>Follow Us</h4>

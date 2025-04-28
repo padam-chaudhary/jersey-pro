@@ -1,22 +1,30 @@
 <?php
-// Database connection parameters
-$servername = "localhost:3306";
-$username = "root";  // Change this to your database username
-$password = "11111111";      // Change this to your database password
-$dbname = "jersey_pro";
+// This should be in includes/dbConnection.php
+// Make sure this file exists and is correct
 
+// Database configuration
+$host = 'localhost:3306';     // Your database host
+$dbname = 'jersey_pro';  // Your database name
+$username = 'root';      // Your database username
+$password = '11111111';          // Your database password
+
+// Create PDO connection
 try {
-    // Create a PDO connection
-    $pdo = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     
-    // Set the PDO error mode to exception
+    // Set PDO to throw exceptions on error
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    // Optional: Set default fetch mode to associative array
+    // Use prepared statements by default
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     
-    // echo "Connected successfully";
-} catch(PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+    // Optional: Disable emulated prepared statements
+    $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    
+} catch (PDOException $e) {
+    // Log the error
+    error_log("Database connection failed: " . $e->getMessage());
+    
+    // Display an error message (remove in production)
+    die("Database connection failed. Please try again later.");
 }
-?>
